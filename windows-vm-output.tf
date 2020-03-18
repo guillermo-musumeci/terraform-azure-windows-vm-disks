@@ -14,7 +14,7 @@ output "windows_vm_username" {
 
 # Windows VM Password
 output "windows_vm_password" {
-  value = var.windows-admin-password
+  value = random_password.windows-vm-password.result
 }
 
 # Windows VM Public IP

@@ -108,7 +108,7 @@ resource "azurerm_windows_virtual_machine" "windows-vm" {
   
   computer_name         = var.windows-vm-hostname
   admin_username        = var.windows-admin-username
-  admin_password        = var.windows-admin-password
+  admin_password        = random_password.windows-vm-password.result
 
   os_disk {
     name                 = "${var.windows-vm-hostname}-os-disk"

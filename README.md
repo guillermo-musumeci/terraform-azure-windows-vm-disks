@@ -1,5 +1,4 @@
-# terraform-azure-windows-vm-disks
-Deploy a Windows VM with 2 extra disks using Terraform
+# Deploy a Windows VM with 2 extra disks using Terraform
 
 Code compatible with **AzureRM v2.x** and **Terraform 12.x**
 

@@ -24,6 +24,17 @@ locals {
   disk_config = "${local.log_start}; ${local.disk_01}; ${local.disk_02}; ${local.disk_03}; ${local.log_end}; ${local.exit_code};"
 }
 
+# Generate random password
+resource "random_password" "windows-vm-password" {
+  length           = 16
+  min_upper        = 2
+  min_lower        = 2
+  min_special      = 2
+  number           = true
+  special          = true
+  override_special = "!@#$%&"
+}
+
 # Create Network Security Group to Access VM from Internet
 resource "azurerm_network_security_group" "windows-vm-nsg" {
   name                = "${var.app_name}-${var.environment}-windows-vm-nsg"
